@@ -3,11 +3,10 @@ package com.codegym.task.task21.task2113;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Hippodrome{
+public class Hippodrome {
 
     static Hippodrome game;
     private List<Horse> horses;
-
 
     public Hippodrome(List<Horse> horses) {
         this.horses = horses;
@@ -26,20 +25,20 @@ public class Hippodrome{
         game.printWinner();
     }
 
-    public void move(){
-    for (Horse horse : horses) {
-        horse.move();
+    public void move() {
+        for (Horse horse : horses) {
+            horse.move();
+        }
     }
-    }
-    public void print(){
-    for (Horse horse : horses) {
-        horse.print();
-    }
+
+    public void print() {
+        for (Horse horse : horses) {
+            horse.print();
+        }
         for (int i = 0; i < 10; i++) {
             System.out.println();
         }
     }
-
 
     public void run() {
         for (int i = 0; i < 100; i++) {
@@ -53,11 +52,11 @@ public class Hippodrome{
         }
     }
 
-    public Horse getWinner(){
+    public Horse getWinner() {
         Horse winner = null;
         double distance = 0;
-        for (Horse horse : horses ) {
-            if (horse.getDistance() >= distance){
+        for (Horse horse : horses) {
+            if (horse.getDistance() >= distance) {
                 winner = horse;
                 distance = horse.getDistance();
             }
@@ -65,7 +64,7 @@ public class Hippodrome{
         return winner;
     }
 
-    public void printWinner(){
+    public void printWinner() {
         System.out.println("The winner is " + getWinner().getName() + "!");
     }
 }
